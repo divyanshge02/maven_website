@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maven Hospital and Healthcare Consultant - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}?v=1.1">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="{{ url_for('static', filename='assets/logo1.png') }}" alt="Maven Hospital Logo" class="logo-img">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="{{ url_for('index') }}" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('about') }}" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('services') }}" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider">
+        <div class="slider-container">
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h1>Healthcare Staff Recruitment & Management</h1>
+                        <p>Comprehensive healthcare staffing solutions for hospitals, clinics, and healthcare facilities. We connect you with qualified healthcare professionals to ensure optimal patient care and operational efficiency.</p>
+                        <div class="slide-buttons">
+                            <a href="{{ url_for('services') }}" class="btn btn-primary">Learn More</a>
+                            <a href="{{ url_for('contact') }}" class="btn btn-secondary">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="slide-image">
+                        <img src="{{ url_for('static', filename='assets/staff.png') }}" alt="Healthcare Staffing">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h1>Business Development & Strategic Planning</h1>
+                        <p>Transform your healthcare organization with our strategic consulting services. We help you develop growth strategies, optimize operations, and achieve sustainable success in the healthcare industry.</p>
+                        <div class="slide-buttons">
+                            <a href="{{ url_for('services') }}" class="btn btn-primary">Learn More</a>
+                            <a href="{{ url_for('contact') }}" class="btn btn-secondary">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="slide-image">
+                        <img src="{{ url_for('static', filename='assets/strat.png') }}" alt="Business Development">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h1>New Hospital Project Management</h1>
+                        <p>From concept to completion, we manage every aspect of your hospital development project. Our comprehensive project management services ensure timely delivery and quality outcomes.</p>
+                        <div class="slide-buttons">
+                            <a href="{{ url_for('services') }}" class="btn btn-primary">Learn More</a>
+                            <a href="{{ url_for('contact') }}" class="btn btn-secondary">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="slide-image">
+                        <img src="{{ url_for('static', filename='assets/banner4.jpg') }}" alt="Hospital Project Management">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h1>Healthcare System Development</h1>
+                        <p>Comprehensive healthcare system development services to optimize operational efficiency, improve patient care quality, and enhance overall healthcare delivery processes.</p>
+                        <div class="slide-buttons">
+                            <a href="{{ url_for('services') }}" class="btn btn-primary">Learn More</a>
+                            <a href="{{ url_for('contact') }}" class="btn btn-secondary">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="slide-image">
+                        <img src="{{ url_for('static', filename='assets/devlopment.png') }}" alt="Healthcare System Development">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="slide">
+                <div class="slide-content">
+                    <div class="slide-text">
+                        <h1>Hospital IT Consultancy & Staff Training</h1>
+                        <p>Expert IT consulting and comprehensive training services to help healthcare organizations implement technology solutions and develop their workforce.</p>
+                        <div class="slide-buttons">
+                            <a href="{{ url_for('services') }}" class="btn btn-primary">Learn More</a>
+                            <a href="{{ url_for('contact') }}" class="btn btn-secondary">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="slide-image">
+                        <img src="{{ url_for('static', filename='assets/banner2.jpg') }}" alt="IT Consultancy & Training">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider Navigation -->
+        <div class="slider-nav">
+            <button class="prev-btn" onclick="changeSlide(-1)">❮</button>
+            <button class="next-btn" onclick="changeSlide(1)">❯</button>
+        </div>
+
+        <!-- Slider Dots -->
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>100+</h3>
+                    <p>Healthcare Projects</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Expert Consultants</p>
+                </div>
+                <div class="stat-item">
+                    <h3>25+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>95%</h3>
+                    <p>Client Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-us-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-hero">
+                    <div class="about-hero-text">
+                        <h2>About Maven Hospital & Healthcare Consultant</h2>
+                        <p class="about-subtitle">Your Trusted Partner in Healthcare Excellence</p>
+                    </div>
+                </div>
+                
+                <div class="about-description">
+                    <p>Maven, established in 2013, is a dedicated Hospital & Healthcare Consultant agency. Under the leadership of Managing Director Hardyesh Singh Gehlot, we specialize in providing expert guidance and solutions to healthcare organizations aiming for strategic growth and enhanced operational efficiency.</p>
+                    
+                    <p>Our commitment lies in empowering the healthcare sector through tailored services, including comprehensive staff recruitment, new project management, and essential IT consultancy. We strive to optimize every aspect of our clients' operations, fostering sustainable development and ultimately contributing to improved patient outcomes and the overall rejuvenation of healthcare.</p>
+                </div>
+                
+                <img src="{{ url_for('static', filename='assets/about.jpg') }}" alt="Maven Hospital and Healthcare Consultant" style="display:block;max-width:100%;height:auto;margin:2rem auto;">
+                
+                <div class="about-features">
+                    <div class="about-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>25+ Years of Healthcare Experience</span>
+                    </div>
+                    <div class="about-feature">
+                        <i class="fas fa-users"></i>
+                        <span>Expert Team of Healthcare Consultants</span>
+                    </div>
+                    <div class="about-feature">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Proven Track Record of Success</span>
+                    </div>
+                    <div class="about-feature">
+                        <i class="fas fa-cogs"></i>
+                        <span>Comprehensive Solutions in various aspects</span>
+                    </div>
+                </div>
+                
+                <div class="about-cta">
+                    <a href="{{ url_for('about') }}" class="btn btn-primary">Learn More About Us</a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-black">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose Maven Hospital & Healthcare Consultant?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Expert Consultants</h3>
+                    <p>Our team of experienced healthcare consultants brings decades of industry expertise to help your organization succeed.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Proven Results</h3>
+                    <p>Track record of successful healthcare projects and organizational transformations across various healthcare settings.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>End-to-End Solutions</h3>
+                    <p>Comprehensive consulting services from initial planning to implementation and ongoing support.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Partnership Approach</h3>
+                    <p>We work as your strategic partner, understanding your unique challenges and delivering customized solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="testimonials-background"></div>
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <p class="testimonials-subtitle">Trusted by healthcare organizations across the country</p>
+            
+            <div class="testimonials-slider">
+                <div class="testimonials-container">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p>"Maven Healthcare Consultant transformed our hospital's recruitment process. Their expertise in finding qualified medical professionals helped us build a world-class team. The results exceeded our expectations."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4>Narendra Rajawat</h4>
+                                        <span>Director</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p>"Their business development strategies helped us expand our healthcare network across three states. The team's deep understanding of healthcare regulations and market dynamics was invaluable."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4>Dr. Vinay Kumar Laundhkar</h4>
+                                        <span>MBBS, DGO</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p>"The IT consultancy services provided by Maven were exceptional. They modernized our entire hospital management system, improving efficiency by 40% and enhancing patient care delivery."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4>Dr. Abhishek Panwar</h4>
+                                        <span>Director</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p>"Maven's project management expertise was crucial in our new hospital development. They delivered the project on time and within budget, exceeding all our quality standards."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4>Dr. Rakesh Arora</h4>
+                                        <span>C.E.O</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 5 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p>"Their staff training programs revolutionized our nursing department. The customized training modules improved patient outcomes and staff satisfaction significantly."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4>Ranveer Singh</h4>
+                                        <span>Director, Raj Hospital</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 6 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p>"The recruitment services provided by Maven were exceptional. They helped me find the desired hospital with expected packages."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4>Dr. Hiral Pandya</h4>
+                                        <span>M.B.B.S, M.D</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 7 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p>"Maven's strategic planning expertise helped us navigate complex healthcare regulations and expand our services. Their partnership approach made all the difference."</p>
+                                <div class="testimonial-author">
+                                    <div class="author-info">
+                                        <h4>Dr. Sachin Uttam Deodhe</h4>
+                                        <span>Executive Director</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial Navigation -->
+                <div class="testimonial-nav">
+                    <button class="testimonial-prev" onclick="changeTestimonial(-1)">❮</button>
+                    <button class="testimonial-next" onclick="changeTestimonial(1)">❯</button>
+                </div>
+
+                <!-- Testimonial Dots -->
+                <div class="testimonial-dots">
+                    <span class="testimonial-dot active" onclick="currentTestimonial(1)"></span>
+                    <span class="testimonial-dot" onclick="currentTestimonial(2)"></span>
+                    <span class="testimonial-dot" onclick="currentTestimonial(3)"></span>
+                    <span class="testimonial-dot" onclick="currentTestimonial(4)"></span>
+                    <span class="testimonial-dot" onclick="currentTestimonial(5)"></span>
+                    <span class="testimonial-dot" onclick="currentTestimonial(6)"></span>
+                    <span class="testimonial-dot" onclick="currentTestimonial(7)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="{{ url_for('static', filename='assets/logo1.png') }}" alt="Maven Hospital Logo" class="footer-logo-img">
+                    </div>
+                    <p>Providing exceptional healthcare services with compassion and expertise. Your health is our priority.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/MavenHMConsultant/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/hardyesh-singh-gehlot-5537bb35/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        <li><a href="{{ url_for('services') }}">Services</a></li>
+                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="{{ url_for('services') }}">Staff Recruitment</a></li>
+                        <li><a href="{{ url_for('services') }}">Business Development</a></li>
+                        <li><a href="{{ url_for('services') }}">Project Management</a></li>
+                        <li><a href="{{ url_for('services') }}">System Development</a></li>
+                        <li><a href="{{ url_for('services') }}">IT Consultancy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Bapu Nagar, Bhilwara, Rajasthan</p>
+                        <p><i class="fas fa-phone"></i> +91 9460200287</p>
+                        <p><i class="fas fa-envelope"></i> mavenhospitalconsultant@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> 24/7 Available for queries</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Maven Hospital and Healthcare Consultant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

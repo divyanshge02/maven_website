@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Maven Hospital and Healthcare Consultant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=1.1">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/logo1.png" alt="Maven Hospital Logo" class="logo-img">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with us for appointments, inquiries, or any other queries.</p>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>Main: +91 9460200287</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>General: mavenhospitalconsultant@gmail.com</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Opening Days</h3>
+                    <p>Monday to Saturday: 9:00 AM to 10:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="contact-layout">
+                <div class="contact-form-container">
+                    <h2 class="contact-heading">Contact Us</h2>
+                    <p class="contact-subtitle">Connect with our expert healthcare consultants to discuss your organization's needs. We provide comprehensive solutions to enhance your healthcare operations and achieve sustainable growth.</p>
+                    
+                    <form class="contact-form" id="contactForm" action="/submit" method="POST" enctype="multipart/form-data">
+                        <!-- Flask Flash Messages -->
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                <div class="flash-messages">
+                                    {% for message in messages %}
+                                        <div class="alert alert-success">{{ message }}</div>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        {% endwith %}
+                        
+                        <div class="form-group">
+                            <label for="name">Your Full Name/Organisation Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mobile">Mobile Number *</label>
+                            <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="10-digit mobile number" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Required *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="Staff Recruitment">Staff Recruitment</option>
+                                <option value="Business Development">Business Development & Strategic Planning</option>
+                                <option value="Project Management">New Hospital Project Management</option>
+                                <option value="System Development">Healthcare System Development</option>
+                                <option value="IT Consultancy">Hospital IT Consultancy</option>
+                                <option value="Training">Hospital Staff Training & Development</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Business/Hospital specific fields (shown for non-staff recruitment services) -->
+                        <div id="businessFields" style="display: none;">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="your@email.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="businessLocation">Hospital/Business Location *</label>
+                                <input type="text" id="businessLocation" name="businessLocation" placeholder="e.g., Mumbai, Delhi, Bangalore, etc.">
+                            </div>
+                        </div>
+                        
+                        <!-- Job-specific fields (only shown for Staff Recruitment) -->
+                        <div id="jobFields" style="display: none;">
+                            <div class="form-group">
+                                <label for="qualification">Qualification *</label>
+                                <select id="qualification" name="qualification">
+                                    <option value="">Select your qualification</option>
+                                    <option value="MBBS">MBBS</option>
+                                    <option value="MD">MD</option>
+                                    <option value="MS">MS</option>
+                                    <option value="DNB">DNB</option>
+                                    <option value="BDS">BDS</option>
+                                    <option value="MDS">MDS</option>
+                                    <option value="BSc Nursing">BSc Nursing</option>
+                                    <option value="MSc Nursing">MSc Nursing</option>
+                                    <option value="GNM">GNM</option>
+                                    <option value="ANM">ANM</option>
+                                    <option value="BAMS">BAMS</option>
+                                    <option value="BHMS">BHMS</option>
+                                    <option value="BPT">BPT</option>
+                                    <option value="MPT">MPT</option>
+                                    <option value="B.Pharm">B.Pharm</option>
+                                    <option value="M.Pharm">M.Pharm</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="specialty">Specialty/Department</label>
+                                <input type="text" id="specialty" name="specialty" placeholder="e.g., Cardiology, Orthopedics, ICU, etc.">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="experience">Work Experience *</label>
+                                <select id="experience" name="experience">
+                                    <option value="">Select experience</option>
+                                    <option value="Fresher">Fresher (0-1 years)</option>
+                                    <option value="1-3 years">1-3 years</option>
+                                    <option value="3-5 years">3-5 years</option>
+                                    <option value="5-10 years">5-10 years</option>
+                                    <option value="10+ years">10+ years</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="location">Preferred Location *</label>
+                                <input type="text" id="location" name="location" placeholder="e.g., Mumbai, Delhi, Bangalore, etc.">
+                            </div>
+                            
+                            <div class="form-group" id="resumeUpload">
+                                <label for="resume">Upload Resume/CV (PDF only)</label>
+                                <input type="file" id="resume" name="resume" accept=".pdf" style="padding: 10px; border: 1px solid #ddd; border-radius: 5px; width: 100%;">
+                                <small style="color: #666; font-size: 0.9rem;">Maximum file size: 5MB (Optional)</small>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Additional Details</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Please provide any additional information about your requirements..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+                    </form>
+                </div>
+                
+                <div class="contact-sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Contact Number</h3>
+                        <div class="emergency-info">
+                            <p><strong>For any queries, call us:</strong></p>
+                            <div class="emergency-number">+91 9460200287</div>
+                            <p>Our team is available 24/7 to assist you with your healthcare consulting needs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Quick Links</h3>
+                        <ul class="quick-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="services.html">Our Services</a></li>
+                            <li><a href="about.html">About Our Team</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Follow Us</h3>
+                        <div class="social-links-contact">
+                            <a href="https://www.facebook.com/MavenHMConsultant/" target="_blank" class="social-link"><i class="fab fa-facebook"></i> Facebook</a>
+                            <a href="https://www.linkedin.com/in/hardyesh-singh-gehlot-5537bb35/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/logo1.png" alt="Maven Hospital Logo" class="footer-logo-img">
+                    </div>
+                    <p>Providing exceptional healthcare services with compassion and expertise. Your health is our priority.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/MavenHMConsultant/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/hardyesh-singh-gehlot-5537bb35/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Staff Recruitment</a></li>
+                        <li><a href="services.html">Business Development</a></li>
+                        <li><a href="services.html">Project Management</a></li>
+                        <li><a href="services.html">System Development</a></li>
+                        <li><a href="services.html">IT Consultancy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Bapu Nagar, Bhilwara, Rajasthan</p>
+                        <p><i class="fas fa-phone"></i> +91 9460200287</p>
+                        <p><i class="fas fa-envelope"></i> mavenhospitalconsultant@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> 24/7 Available for queries</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Maven Hospital and Healthcare Consultant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js?v=1.1"></script>
+</body>
+</html> 
