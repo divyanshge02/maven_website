@@ -13,21 +13,13 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="assets/logo1.png" alt="Maven Hospital Logo" class="logo-img">
+                <img src="{{ url_for('static', filename='assets/logo1.png') }}" alt="Maven Hospital Logo" class="logo-img">
             </div>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link active">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a href="services.html" class="nav-link">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </li>
+                <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link active">About Us</a></li>
+                <li class="nav-item"><a href="{{ url_for('services') }}" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="{{ url_for('contact') }}" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -69,6 +61,7 @@
     <!-- Mission & Values -->
     <section class="mission-values-modern">
         <div class="mv-container">
+            <!-- Vision -->
             <div class="mv-card">
                 <div class="mv-icon"><i class="fas fa-eye"></i></div>
                 <h3>Our Vision</h3>
@@ -78,6 +71,7 @@
                 </ul>
                 <p>Our vision at Maven is to proactively shape the future of global healthcare. We aspire to be the driving force behind transformative changes and groundbreaking innovations, ultimately ensuring that high-quality, efficient, and accessible healthcare becomes a reality for everyone, everywhere.</p>
             </div>
+            <!-- Mission -->
             <div class="mv-card">
                 <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
                 <h3>Our Mission</h3>
@@ -88,6 +82,7 @@
                 </ul>
                 <p>Our mission is to equip healthcare organizations with the precise strategic insights and holistic solutions they need to thrive. We are dedicated to rigorously optimizing their operations, cultivating sustainable long-term growth, and demonstrably improving patient care, all achieved through our specialized offerings in talent acquisition, professional training, and advanced IT guidance.</p>
             </div>
+            <!-- Values -->
             <div class="mv-card">
                 <div class="mv-icon"><i class="fas fa-heart"></i></div>
                 <h3>Our Values</h3>
@@ -103,7 +98,7 @@
         </div>
     </section>
 
-    <!-- Team Section -->
+    <!-- Team -->
     <section class="team-section">
         <div class="container">
             <h2>Our Leader</h2>
@@ -146,9 +141,9 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="assets/logo1.png" alt="Maven Hospital Logo" class="footer-logo-img">
+                        <img src="{{ url_for('static', filename='assets/logo1.png') }}" alt="Maven Hospital Logo" class="footer-logo-img">
                     </div>
-                    <p>Providing exceptional healthcare services with compassion and expertise. Your health is our priority.</p>
+                    <p>Providing exceptional healthcare services...</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/MavenHMConsultant/" target="_blank"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.linkedin.com/in/hardyesh-singh-gehlot-5537bb35/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -157,20 +152,20 @@
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        <li><a href="{{ url_for('services') }}">Services</a></li>
+                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="services.html">Staff Recruitment</a></li>
-                        <li><a href="services.html">Business Development</a></li>
-                        <li><a href="services.html">Project Management</a></li>
-                        <li><a href="services.html">System Development</a></li>
-                        <li><a href="services.html">IT Consultancy</a></li>
+                        <li><a href="{{ url_for('services') }}">Staff Recruitment</a></li>
+                        <li><a href="{{ url_for('services') }}">Business Development</a></li>
+                        <li><a href="{{ url_for('services') }}">Project Management</a></li>
+                        <li><a href="{{ url_for('services') }}">System Development</a></li>
+                        <li><a href="{{ url_for('services') }}">IT Consultancy</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -189,6 +184,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
-</html> 
+</html>
