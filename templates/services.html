@@ -6,28 +6,20 @@
     <title>Services - Maven Hospital and Healthcare Consultant</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="assets/logo1.png" alt="Maven Hospital Logo" class="logo-img">
+                <img src="{{ url_for('static', filename='assets/logo1.png') }}" alt="Maven Hospital Logo" class="logo-img">
             </div>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a href="services.html" class="nav-link active">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </li>
+                <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="{{ url_for('services') }}" class="nav-link active">Services</a></li>
+                <li class="nav-item"><a href="{{ url_for('contact') }}" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -57,14 +49,16 @@
     <!-- Main Services -->
     <section class="main-services">
         <div class="container">
+
+            <!-- Staff Recruitment -->
             <div class="service-category">
                 <h2>Healthcare Staffing & Recruitment</h2>
                 <div class="services-grid">
                     <div class="service-detail-card">
-                        <img src="assets/staff.png" alt="Doctor and Hospital Staff Recruitment">
+                        <img src="{{ url_for('static', filename='assets/staff.png') }}" alt="Doctor and Hospital Staff Recruitment">
                         <div class="service-content">
                             <h3>Healthcare Staff Recruitment & Management</h3>
-                            <p>Comprehensive healthcare staffing solutions for hospitals, clinics, and healthcare facilities. We connect you with qualified healthcare professionals to ensure optimal patient care and operational efficiency.</p>
+                            <p>Comprehensive healthcare staffing solutions for hospitals, clinics, and healthcare facilities.</p>
                             <ul>
                                 <li>Physician and specialist recruitment</li>
                                 <li>Nursing staff placement</li>
@@ -77,14 +71,15 @@
                 </div>
             </div>
 
+            <!-- Strategic Planning -->
             <div class="service-category">
                 <h2>Strategic Planning & Business Development</h2>
                 <div class="services-grid">
                     <div class="service-detail-card">
-                        <img src="assets/strat.png" alt="Business Development & Strategies Planning">
+                        <img src="{{ url_for('static', filename='assets/strat.png') }}" alt="Business Development & Strategies Planning">
                         <div class="service-content">
                             <h3>Business Development & Strategic Planning</h3>
-                            <p>Transform your healthcare organization with our strategic consulting services. We help you develop growth strategies, optimize operations, and achieve sustainable success in the healthcare industry.</p>
+                            <p>Transform your healthcare organization with our strategic consulting services.</p>
                             <ul>
                                 <li>Market analysis and competitive positioning</li>
                                 <li>Strategic planning and business model development</li>
@@ -97,14 +92,15 @@
                 </div>
             </div>
 
+            <!-- Hospital Project Management -->
             <div class="service-category">
                 <h2>Hospital Project Management</h2>
                 <div class="services-grid">
                     <div class="service-detail-card">
-                        <img src="assets/banner4.jpg" alt="New Hospital Project Management">
+                        <img src="{{ url_for('static', filename='assets/banner4.jpg') }}" alt="New Hospital Project Management">
                         <div class="service-content">
                             <h3>New Hospital Project Management</h3>
-                            <p>From concept to completion, we manage every aspect of your hospital development project. Our comprehensive project management services ensure timely delivery and quality outcomes.</p>
+                            <p>From concept to completion, we manage every aspect of your hospital development project.</p>
                             <ul>
                                 <li>Project planning and feasibility studies</li>
                                 <li>Construction and renovation management</li>
@@ -117,14 +113,15 @@
                 </div>
             </div>
 
+            <!-- System Development -->
             <div class="service-category">
                 <h2>Healthcare System Development</h2>
                 <div class="services-grid">
                     <div class="service-detail-card">
-                        <img src="assets/devlopment.png" alt="Healthcare System Development">
+                        <img src="{{ url_for('static', filename='assets/devlopment.png') }}" alt="Healthcare System Development">
                         <div class="service-content">
                             <h3>Healthcare System Development</h3>
-                            <p>Comprehensive healthcare system development services to optimize operational efficiency, improve patient care quality, and enhance overall healthcare delivery processes.</p>
+                            <p>Optimize operational efficiency and enhance healthcare delivery.</p>
                             <ul>
                                 <li>Electronic Health Record (EHR) implementation</li>
                                 <li>Hospital Information System (HIS) development</li>
@@ -137,33 +134,14 @@
                 </div>
             </div>
 
-            <div class="service-category">
-                <h2>Technology & IT Solutions</h2>
-                <div class="services-grid">
-                    <div class="service-detail-card">
-                        <img src="assets/banner2.jpg" alt="Hospital IT Consultancy">
-                        <div class="service-content">
-                            <h3>Healthcare Staff Recruitment & Management</h3>
-                            <p>Comprehensive healthcare staffing solutions for hospitals, clinics, and healthcare facilities. We connect you with qualified healthcare professionals to ensure optimal patient care and operational efficiency.</p>
-                            <ul>
-                                <li>Physician and specialist recruitment</li>
-                                <li>Nursing staff placement</li>
-                                <li>Administrative and support staff hiring</li>
-                                <li>Credentialing and licensing assistance</li>
-                                <li>Staff retention and development programs</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <!-- IT & Training -->
             <div class="service-category">
                 <h2>IT Consultancy & Training</h2>
                 <div class="service-detail-card">
-                    <img src="assets/it.png" alt="Hospital Staff Training and Development">
+                    <img src="{{ url_for('static', filename='assets/it.png') }}" alt="Hospital Staff Training and Development">
                     <div class="service-content">
                         <h3>Hospital IT Consultancy & Staff Training</h3>
-                        <p>Expert IT consulting and comprehensive training services to help healthcare organizations implement technology solutions and develop their workforce.</p>
+                        <p>Expert IT consulting and comprehensive training services.</p>
                         <ul>
                             <li>IT infrastructure assessment and planning</li>
                             <li>Technology implementation consulting</li>
@@ -174,6 +152,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -182,10 +161,10 @@
         <div class="container">
             <div class="cta-content">
                 <h2>Ready to Schedule Your Appointment?</h2>
-                <p>Contact us today to book a consultation with our healthcare specialists. We're here to provide you with the care you deserve.</p>
+                <p>Contact us today to book a consultation with our healthcare specialists.</p>
                 <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-primary">Book Appointment</a>
-                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-primary">Book Appointment</a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-secondary">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -197,9 +176,9 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="assets/logo1.png" alt="Maven Hospital Logo" class="footer-logo-img">
+                        <img src="{{ url_for('static', filename='assets/logo1.png') }}" alt="Maven Hospital Logo" class="footer-logo-img">
                     </div>
-                    <p>Providing exceptional healthcare services with compassion and expertise. Your health is our priority.</p>
+                    <p>Providing exceptional healthcare services with compassion and expertise.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/MavenHMConsultant/" target="_blank"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.linkedin.com/in/hardyesh-singh-gehlot-5537bb35/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -208,30 +187,28 @@
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About Us</a></li>
+                        <li><a href="{{ url_for('services') }}">Services</a></li>
+                        <li><a href="{{ url_for('contact') }}">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
                     <ul>
-                        <li><a href="services.html">Staff Recruitment</a></li>
-                        <li><a href="services.html">Business Development</a></li>
-                        <li><a href="services.html">Project Management</a></li>
-                        <li><a href="services.html">System Development</a></li>
-                        <li><a href="services.html">IT Consultancy</a></li>
+                        <li><a href="{{ url_for('services') }}">Staff Recruitment</a></li>
+                        <li><a href="{{ url_for('services') }}">Business Development</a></li>
+                        <li><a href="{{ url_for('services') }}">Project Management</a></li>
+                        <li><a href="{{ url_for('services') }}">System Development</a></li>
+                        <li><a href="{{ url_for('services') }}">IT Consultancy</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact Info</h4>
-                    <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> Bapu Nagar, Bhilwara, Rajasthan</p>
-                        <p><i class="fas fa-phone"></i> +91 9460200287</p>
-                        <p><i class="fas fa-envelope"></i> mavenhospitalconsultant@gmail.com</p>
-                        <p><i class="fas fa-clock"></i> 24/7 Available for queries</p>
-                    </div>
+                    <p><i class="fas fa-map-marker-alt"></i> Bapu Nagar, Bhilwara, Rajasthan</p>
+                    <p><i class="fas fa-phone"></i> +91 9460200287</p>
+                    <p><i class="fas fa-envelope"></i> mavenhospitalconsultant@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> 24/7 Available</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -240,6 +217,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
-</html> 
+</html>
